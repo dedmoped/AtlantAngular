@@ -1,0 +1,19 @@
+<app-add-table-row (onChanged)="onChanged($event)"></app-add-table-row>
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataTable">
+      <ng-container [matColumnDef]="col" *ngFor="let col of displayedColumns">
+        <mat-header-cell *matHeaderCellDef> {{ col }} </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element[col] }} </mat-cell>
+      </ng-container>
+      <ng-container [matColumnDef]="'actions'">
+        <mat-header-cell *matHeaderCellDef> actions </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button  (click)="delete(element)">
+            <mat-icon mat-icon-button color="warn">delete</mat-icon>
+          </button>
+        </mat-cell>>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+    </mat-table>
+  </div>
