@@ -1,7 +1,7 @@
 <form *ngIf="showForm">
       <div class="form-group col-md-3">
         <label>Введите работника</label>
-        <input type="text" class="form-control" name="fullname" [(ngModel)]="fullname" placeholder="И.Ф.О" #fio="ngModel" required>
+        <input type="text" class="form-control" name="fullname" [(ngModel)]="fullname" placeholder="И.Ф.О" #fio="ngModel" required maxlength="20">
         <div *ngIf="checkName" class="alert alert-danger">Этот работник уже в списке</div>
       </div>
 <button type="submit" (click)="add()" [disabled]="fio.invalid" class="btn btn-primary">Добавить</button>
