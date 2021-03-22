@@ -40,7 +40,6 @@ export class TableComponent implements OnInit {
       })
   }
   delete(detail: any) {
-    console.log(detail);
     const dialogRef = this.dialog.open(ConfirmationDialogComponent);
     dialogRef.afterClosed().subscribe(result => {
       if (result) {

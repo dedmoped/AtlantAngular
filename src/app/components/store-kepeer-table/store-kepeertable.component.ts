@@ -17,7 +17,6 @@ export class StoreKepeertableComponent implements OnInit {
   dataTable:any;
   showForm :boolean=false;
   showButton:boolean=true;
-  Date:string="23-01-2012";
   constructor(private data:DataServiceService, public dialog: MatDialog) { }
   ngOnInit(): void {
   this.data.getStoreKepeerList().subscribe(res=>this.dataTable=res,err=>{alert("error")});
